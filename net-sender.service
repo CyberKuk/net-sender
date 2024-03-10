@@ -1,0 +1,23 @@
+[Unit]
+Description=Send network params by telegram
+## make sure we only start the service after network is up
+Wants=network-online.target
+After=network.target  network-online.target
+
+
+[Service]
+## here we can set custom environment variables
+# By default type 'simple' is used, see also https://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=
+# Type=simple|exec|forking|oneshot|dbus|notify|idle
+#! Add path to shell script here
+ExecStart=
+ExecStop=
+# don't use 'nobody' if your script needs to access user files
+# (if User is not set the service will run as root)
+User=root
+
+# Useful during debugging; remove it once the service is working
+StandardOutput=console
+
+[Install]
+WantedBy=multi-user.target
