@@ -10,7 +10,7 @@ After=network.target  network-online.target
 # By default type 'simple' is used, see also https://www.freedesktop.org/software/systemd/man/systemd.service.html#Type=
 # Type=simple|exec|forking|oneshot|dbus|notify|idle
 #! Add path to shell script here
-ExecStart=
+ExecStart=/root/sender/run.sh
 ExecStop=
 # don't use 'nobody' if your script needs to access user files
 # (if User is not set the service will run as root)
